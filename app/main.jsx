@@ -10,6 +10,7 @@ class App extends React.Component {
       <div className="appContainer">
         <Timer />
         <TodoBox />
+        <p> aaaaaa測試atom</p>
       </div>
     )
   }
