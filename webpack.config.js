@@ -5,10 +5,10 @@ var Path= require('path'),
 module.exports= {
 	entry: {
 		bundle: [
-			Path.resolve(__dirname, 'app/main.jsx'),
+			Path.resolve(__dirname, 'app/boot.js'),
 			'webpack/hot/dev-server'
 		],
-		vendors: ['jquery']
+		vendors: ['jquery', 'react']
 	},
 	output: {
 		path: Path.resolve(__dirname, 'public/'),
@@ -27,7 +27,7 @@ module.exports= {
 			{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?includePaths[]='+ Path.resolve(__dirname, './node_modules/compass-mixins/lib'))},
 			{ test: /\.js(x?)$/, loaders: ['react-hot', 'babel'], include: Path.resolve(__dirname, 'app')}
 		],
-		noParse: ['jquery']
+		noParse: ['jquery', 'react']
 	},
 	plugins:[
 		new webpack.ProvidePlugin({

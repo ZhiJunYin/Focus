@@ -2,7 +2,11 @@
 
 class TodoBox extends React.Component {
   render() {
-    return <h2>Hi, Im TodoBox!</h2>;
+    return (
+      <div className="TodoBox">
+        <h3>Hi, Im TodoBox!</h3>
+      </div>
+    );
   }
 }
 
