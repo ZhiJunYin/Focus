@@ -1,1 +1,16 @@
 @import "compass/reset";
+
+$blue-ultralight: #dcedff;
+$grey-ultralight: #fbf5f3;
+$yellow-light: #dbf4ad;
+$blue: #6cbeed;
+$orange: #fcec52;
+$yellow: #e0ff4f;
+$green: #ade25d;
+$brown: #50514f;
+
+
+body {
+  color: #fff;
+  background: $blue;
+}

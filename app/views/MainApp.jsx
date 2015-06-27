@@ -8,7 +8,7 @@ class MainApp extends React.Component {
     return (
       <div className="appContainer">
         <TimerBox />
-        <TodoBox count={50} />
+        <TodoBox />
       </div>
     )
   }
