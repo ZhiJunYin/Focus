@@ -1,10 +1,8 @@
 'use strict';
 
-// import './scss/app.scss';
 import TimerBox from './TimerBox.jsx';
 import TodoBox from './TodoBox.jsx';
 
-// render
 class MainApp extends React.Component {
   render() {
     return (
@@ -16,5 +14,4 @@ class MainApp extends React.Component {
   }
 }
 
-// React.render( <App />, document.getElementById('app'));
 export default  MainApp;
