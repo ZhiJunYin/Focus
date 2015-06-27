@@ -1,6 +1,6 @@
 'use strict';
 
-class TimerBox extends React.Component {
+class comp extends React.Component {
   render() {
     return (
       <div className="TimerBox">
@@ -10,4 +10,4 @@ class TimerBox extends React.Component {
   }
 }
 
-export default TimerBox;
+export default comp;
