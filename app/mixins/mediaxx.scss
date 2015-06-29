@@ -1,0 +1,16 @@
+// Writen by Ricky Huang
+
+@mixin mediaxx($media){
+	@if $media == xs{
+		@media #{$xs}{ @content; }
+	}
+	@else if $media == sm{
+		@media #{$sm}{ @content; }
+	}
+	@else if $media == md{
+		@media #{$md}{ @content; }
+	}
+	@else if $media == lg{
+		@media #{$lg}{ @content; }
+	}
+}

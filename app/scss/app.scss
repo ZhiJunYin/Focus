@@ -1,16 +1,28 @@
+// Utilities
 @import "compass/reset";
-
-$blue-ultralight: #dcedff;
-$grey-ultralight: #fbf5f3;
-$yellow-light: #dbf4ad;
-$blue: #6cbeed;
-$orange: #fcec52;
-$yellow: #e0ff4f;
-$green: #ade25d;
-$brown: #50514f;
+@import "compass/layout";
+@import "compass/css3";
+@import "utility";
 
 
-body {
-  color: #fff;
-  background: $blue;
+// For dev enviroment
+$grid-background-column-color: #eee;
+
+// 瀏覽器相關
+$browser-minimun-versions: ( "ie": "8");
+
+
+// Blocks
+html, body, #app, .appContainer {
+  width: 100%;
+  height: 100%;
+}
+#app {
+  .TimerBox, .TodoBox {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  @import "components/TimerBox";
+  @import "components/TodoBox";
 }

@@ -1,10 +1,16 @@
 'use strict';
 
+import TaskBox from './TaskBox.jsx';
+import AddTaskBox from './AddTaskBox.jsx';
+import FilterBox from './FilterBox.jsx';
+
 class comp extends React.Component {
   render() {
     return (
       <div className="TodoBox">
-        <h3>Hi, Im TodoBox!</h3>
+        <FilterBox />
+        <TaskBox />
+        <AddTaskBox />
       </div>
     );
   }

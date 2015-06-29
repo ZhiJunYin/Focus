@@ -8,7 +8,7 @@ module.exports= {
 			Path.resolve(__dirname, 'app/boot.js'),
 			'webpack/hot/dev-server'
 		],
-		vendors: ['jquery', 'react']
+		vendors: ['jquery', 'react', 'gsap']
 	},
 	output: {
 		path: Path.resolve(__dirname, 'public/'),
@@ -27,7 +27,7 @@ module.exports= {
 			{ test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?includePaths[]='+ Path.resolve(__dirname, './node_modules/compass-mixins/lib'))},
 			{ test: /\.js(x?)$/, loaders: ['react-hot', 'babel'], include: Path.resolve(__dirname, 'app')}
 		],
-		noParse: ['jquery', 'react']
+		noParse: ['jquery', 'react', 'gsap']
 	},
 	plugins:[
 		new webpack.ProvidePlugin({

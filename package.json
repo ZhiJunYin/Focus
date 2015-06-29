@@ -24,6 +24,7 @@
     "css": "^2.2.0",
     "css-loader": "^0.14.5",
     "extract-text-webpack-plugin": "^0.8.2",
+    "gsap": "^1.17.0",
     "jquery": "^2.1.4",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "flux": "^2.0.3",
+    "normalize.css": "^3.0.3",
     "react": "^0.13.3"
   }
 }

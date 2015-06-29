@@ -7,8 +7,9 @@ class MainApp extends React.Component {
   render() {
     return (
       <div className="appContainer">
-        <TimerBox />
-        <TodoBox />
+        <TimerBox className="TimerBox" />
+        <TodoBox className="TodoBox" />
+        <div className="clear"></div>
       </div>
     )
   }
