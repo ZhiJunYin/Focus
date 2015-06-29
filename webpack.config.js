@@ -36,7 +36,7 @@ module.exports= {
 			'window.jquery': 'jquery',
 			'React': 'react/addons'
 		}),
-		//new webpack.optimize.UglifyJsPlugin(),
+		new webpack.optimize.UglifyJsPlugin(),
 		new webpack.optimize.DedupePlugin(),
 		new ExtractTextPlugin('css/app.css')
 	],
