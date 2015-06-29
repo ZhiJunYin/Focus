@@ -4,7 +4,10 @@ class comp extends React.Component {
   render() {
     return (
       <div className="FilterBox">
-        <input />
+        <div className="group">
+          <input  className="FilterInput" type="text" />
+          <label></label>
+        </div>
       </div>
     );
   }

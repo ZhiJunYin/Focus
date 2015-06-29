@@ -1,4 +1,5 @@
-// colors
+@import "mixins/_placeholder.scss";
+// Colors
 $blue-ultralight: #dcedff;
 $grey-ultralight: #fbf5f3;
 $yellow-light: #dbf4ad;
@@ -8,7 +9,50 @@ $yellow: #e0ff4f;
 $green: #ade25d;
 $brown: #50514f;
 
-// common class
+// Common components
 .clear {
   clear: both;
+}
+body {
+  color: $blue-ultralight;
+}
+.InputGroup {
+  position: relative;
+  height: 32px;
+  input[type="text"] {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+  }
+  label {
+    position: absolute;
+    bottom: 2px;
+    @include opacity(0.5);
+    font-size: 1.2em;
+  }
+}
+input[type="text"] {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid $blue-ultralight;
+  border-left: 0;
+  background: transparent;
+  outline: none;
+  color: $blue-ultralight;
+}
+
+button {
+  background: transparent;
+  color: $blue-ultralight;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 8px 0;
+  border: 2px solid $blue-ultralight;
+  .fa {
+    font-size: 0.8em;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
 }
