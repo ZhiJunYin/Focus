@@ -9,7 +9,7 @@ class comp extends React.Component {
     return (
       <div className="TodoBox">
         <FilterBox />
-        <TaskBox />
+        <TaskBox truth={ this.props.truth} />
         <AddTaskBox />
       </div>
     );

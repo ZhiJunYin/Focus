@@ -6,7 +6,7 @@ class comp extends React.Component {
       <li className="TaskList">
         <label>
           <input type="checkbox"/>
-          <span>我是待辦事項1</span>
+          <span>{this.props.truth.todo}</span>
         </label>
         <div className="TaskOptions">
           <i className="fa fa-pencil"></i>

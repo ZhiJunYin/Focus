@@ -22,6 +22,7 @@
   .TaskList {
     position: relative;
     background: $orange;
+    margin-bottom: 8px;
     input[type="checkbox"] {
       display: none;
     }
@@ -60,7 +61,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 30px;
+    bottom: 45px;
     margin: auto;
     width: 95%;
     .InputGroup {
@@ -79,5 +80,6 @@
     float: right;
     width: 21%;
     font-size: 0.9em;
+    cursor: pointer;
   }
 }
