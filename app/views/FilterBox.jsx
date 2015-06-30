@@ -5,8 +5,7 @@ class comp extends React.Component {
     return (
       <div className="FilterBox">
         <div className="group">
-          <input  className="FilterInput" type="text" />
-          <label></label>
+          <input  className="FilterInput" type="text" placeholder="關鍵字搜尋" />
         </div>
       </div>
     );

@@ -1,4 +1,5 @@
 .TodoBox {
+  position: relative;
   background: $blue;
   .FilterBox, .TaskBox, .AddTaskBox {
     width: 95%;
@@ -19,6 +20,8 @@
     padding: 30px 15px;
   }
   .TaskList {
+    position: relative;
+    background: $orange;
     input[type="checkbox"] {
       display: none;
     }
@@ -27,15 +30,38 @@
     }
     label {
       // border: 1px solid $blue-ultralight;
-      background: $orange;
+      width: 83%;
       color: $brown;
       padding: 8px;
       display: block;
       cursor: pointer;
     }
   }
+  .TaskOptions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    i {
+      color: $brown;
+      display: inline-block;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      padding-right: 15px;
+      cursor: pointer;
+      @include opacity(.2);
+      @include transition-property(opacity);
+      @include transition-duration(0.2s);
+      &:hover {
+        @include opacity(1);
+      }
+    }
+  }
   .AddTaskBox {
-    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    margin: auto;
     width: 95%;
     .InputGroup {
       width: 75%;

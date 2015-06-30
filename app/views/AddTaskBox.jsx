@@ -5,8 +5,7 @@ class comp extends React.Component {
     return (
       <div className="AddTaskBox">
         <div className="InputGroup">
-          <input className="AddInput" type="text" />
-          <label>今天想完成什麼事情呢？</label>
+          <input className="AddInput" type="text" placeholder="今天想做什麼呢？" />
         </div>
         <button className="AddButton">
           <i className="fa fa-plus"></i>
