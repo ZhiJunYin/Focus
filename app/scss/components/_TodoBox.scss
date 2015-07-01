@@ -38,6 +38,14 @@
       cursor: pointer;
     }
   }
+  .task {
+    outline: none;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    &:focus {
+      @include opacity(.3);
+    }
+  }
   .TaskOptions {
     position: absolute;
     top: 0;
