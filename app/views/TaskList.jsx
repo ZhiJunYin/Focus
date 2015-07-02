@@ -15,7 +15,7 @@ class comp extends React.Component {
     return(
       <li className="TaskList">
         <label>
-          <input type="checkbox" checked={ InputClasses} />
+          <input type="checkbox" defaultChecked={ InputClasses} />
           <span className="task">{this.props.truth.todo}</span>
         </label>
         <div className="TaskOptions">
