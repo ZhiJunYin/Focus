@@ -23,12 +23,6 @@
     position: relative;
     background: $orange;
     margin-bottom: 8px;
-    input[type="checkbox"] {
-      display: none;
-    }
-    input[type="checkbox"]:checked+span {
-      text-decoration: line-through;
-    }
     label {
       // border: 1px solid $blue-ultralight;
       width: 83%;
@@ -45,6 +39,9 @@
     &:focus {
       @include opacity(.3);
     }
+  }
+  .done {
+    text-decoration: line-through;
   }
   .TaskOptions {
     position: absolute;

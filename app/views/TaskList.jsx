@@ -1,7 +1,5 @@
 'use strict';
 
-var classSet = React.addons.classSet;
-
 class comp extends React.Component {
 
   componentDidMount(){
@@ -9,14 +7,16 @@ class comp extends React.Component {
   }
 
   render(){
-    var InputClasses = classSet({
-      'checked': this.props.truth.done
+    var taskClasses = classSet({
+      'task': true,
+      'done': this.props.truth.done
     });
     return(
       <li className="TaskList">
         <label>
-          <input type="checkbox" defaultChecked={ InputClasses} />
-          <span className="task">{this.props.truth.todo}</span>
+          <span className={ taskClasses}>
+            { this.props.truth.todo}
+          </span>
         </label>
         <div className="TaskOptions">
           <i className="fa fa-pencil" onClick={this.handleClick.bind(this)}></i>

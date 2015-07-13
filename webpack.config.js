@@ -8,7 +8,7 @@ module.exports= {
 			Path.resolve(__dirname, 'app/boot.js'),
 			'webpack/hot/dev-server'
 		],
-		vendors: ['jquery', 'react', 'gsap']
+		vendors: ['jquery', 'react', 'gsap', 'classnames']
 	},
 	output: {
 		path: Path.resolve(__dirname, 'public/'),
@@ -34,7 +34,8 @@ module.exports= {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jquery': 'jquery',
-			'React': 'react/addons'
+			'React': 'react/addons',
+			'classSet': 'classnames'
 		}),
 		new webpack.optimize.UglifyJsPlugin(),
 		new webpack.optimize.DedupePlugin(),
