@@ -1,5 +1,7 @@
 'use strict';
 
+import actions from '../actions/ActionCreator.js';
+
 class comp extends React.Component {
 
   componentDidMount(){
@@ -13,24 +15,56 @@ class comp extends React.Component {
     });
     return(
       <li className="TaskList">
-        <label>
-          <span className={ taskClasses}>
+        <label className="taskWrapper" onClick = { this.handleDoneOrNot.bind(this)}>
+          <span className={ taskClasses}
+                onDoubleClick={ this.handleEdit.bind(this)}
+                onBlur={ this.handleEndEdit.bind(this)}
+                onKeyDown={this.handleKeyDown.bind(this)}>
             { this.props.truth.todo}
           </span>
         </label>
         <div className="TaskOptions">
-          <i className="fa fa-pencil" onClick={this.handleClick.bind(this)}></i>
+          <i className="fa fa-pencil" onClick={ this.handleEdit.bind(this)}></i>
           <i className="fa fa-trash-o"></i>
         </div>
       </li>
     );
   }
-  handleClick(){
-    this.$task.attr('contenteditable', 'true').focus();
-    this.$task.on( 'focusout', function(e){
-      e.preventDefault();
-      $(this).removeAttr('contenteditable');
-    });
+
+  handleEdit(e){
+    this.$task
+      .attr('contenteditable', 'true')
+      .focus()
+      .css({
+        'cursor': 'auto'
+      })
+      .parent()
+      .css({
+        'cursor': 'auto'
+      });
+  }
+
+  handleEndEdit(){
+    console.log('blur');
+    this.$task
+      .removeAttr('contenteditable')
+      .css({
+        'cursor': 'pointer'
+      })
+      .parent()
+      .css({
+        'cursor': 'pointer'
+      });
+  }
+
+  handleKeyDown(e){
+    if( e.keyCode == 13){
+      this.$task.blur();
+    }
+  }
+
+  handleDoneOrNot(){
+
   }
 }
 

@@ -23,14 +23,14 @@
     position: relative;
     background: $orange;
     margin-bottom: 8px;
-    label {
-      // border: 1px solid $blue-ultralight;
-      width: 83%;
-      color: $brown;
-      padding: 8px;
-      display: block;
-      cursor: pointer;
-    }
+  }
+  .taskWrapper {
+    // border: 1px solid $blue-ultralight;
+    width: 83%;
+    color: $brown;
+    padding: 8px;
+    display: block;
+    cursor: pointer;
   }
   .task {
     outline: none;
