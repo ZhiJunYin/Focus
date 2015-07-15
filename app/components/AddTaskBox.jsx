@@ -1,5 +1,7 @@
 'use strict';
 
+import actions from '../actions/ActionCreator';
+
 class comp extends React.Component {
   componentDidMount(){
     this.$addInput = $(React.findDOMNode(this)).find('.addInput');
@@ -19,6 +21,8 @@ class comp extends React.Component {
     );
   }
   handleAddTask(){
+    var newTask = this.$addInput.val();
+    actions.handleAddTask( newTask);
   }
 }
 
