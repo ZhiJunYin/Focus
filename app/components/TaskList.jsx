@@ -1,7 +1,5 @@
 'use strict';
 
-import actions from '../actions/ActionCreator.js';
-
 class comp extends React.Component {
 
   componentDidMount(){
@@ -14,7 +12,7 @@ class comp extends React.Component {
       'done': this.props.truth.done
     });
     return(
-      <li className="TaskList">
+      <li className="taskList">
         <label className="taskWrapper" onClick = { this.handleDoneOrNot.bind(this)}>
           <span className={ taskClasses}
                 onDoubleClick={ this.handleEdit.bind(this)}
@@ -23,7 +21,7 @@ class comp extends React.Component {
             { this.props.truth.todo}
           </span>
         </label>
-        <div className="TaskOptions">
+        <div className="taskOptions">
           <i className="fa fa-pencil" onClick={ this.handleEdit.bind(this)}></i>
           <i className="fa fa-trash-o"></i>
         </div>
@@ -45,7 +43,7 @@ class comp extends React.Component {
   }
 
   handleEndEdit(){
-    console.log('blur');
+    var taskValue;
     this.$task
       .removeAttr('contenteditable')
       .css({
@@ -55,6 +53,7 @@ class comp extends React.Component {
       .css({
         'cursor': 'pointer'
       });
+    taskValue = this.$task.text();
   }
 
   handleKeyDown(e){

@@ -9,7 +9,7 @@ class comp extends React.Component {
       return <TaskList truth={data} key={i} />
     }, this);
     return (
-      <ul className="TaskBox">
+      <ul className="taskBox">
         {arrTask}
       </ul>
     );

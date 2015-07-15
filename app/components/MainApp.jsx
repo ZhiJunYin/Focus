@@ -16,8 +16,8 @@ class MainApp extends React.Component {
   render() {
     return (
       <div className="appContainer">
-        <TimerBox className="TimerBox" />
-        <TodoBox className="TodoBox" truth={this.state.data} />
+        <TimerBox className="timerBox" />
+        <TodoBox className="todoBox" truth={this.state.data} />
         <div className="clear"></div>
       </div>
     )

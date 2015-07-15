@@ -7,7 +7,7 @@ import FilterBox from './FilterBox.jsx';
 class comp extends React.Component {
   render() {
     return (
-      <div className="TodoBox">
+      <div className="todoBox">
         <FilterBox />
         <TaskBox truth={ this.props.truth} />
         <AddTaskBox />

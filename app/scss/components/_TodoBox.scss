@@ -1,25 +1,28 @@
-.TodoBox {
+.todoBox {
   position: relative;
+  width: 600px;
+  height: 100%;
+  margin: auto;
   background: $blue;
-  .FilterBox, .TaskBox, .AddTaskBox {
+  .filterBox, .taskBox, .addTaskBox {
     width: 95%;
     margin: 0 auto;
   }
-  .FilterBox {
+  .filterBox {
     padding-top: 30px;
     text-align: right;
   }
-  .FilterInput {
+  .filterInput {
     width: 21%;
     font-size: 0.8em;
     font-style: italic;
     letter-spacing: 0.1em;
   }
-  .TaskBox {
+  .taskBox {
     min-height: 200px;
     padding: 30px 15px;
   }
-  .TaskList {
+  .taskList {
     position: relative;
     background: $orange;
     margin-bottom: 8px;
@@ -43,7 +46,7 @@
   .done {
     text-decoration: line-through;
   }
-  .TaskOptions {
+  .taskOptions {
     position: absolute;
     top: 0;
     right: 0;
@@ -62,26 +65,26 @@
       }
     }
   }
-  .AddTaskBox {
+  .addTaskBox {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 45px;
     margin: auto;
     width: 95%;
-    .InputGroup {
+    .inputGroup {
       width: 75%;
       float: left;
       margin-right: 2%;
     }
   }
-  .AddInput {
+  .addInput {
     vertical-align: bottom;
     font-size: 1.2em;
     line-height: 1.5em;
     margin-top: 5px;
   }
-  .AddButton {
+  .addButton {
     float: right;
     width: 21%;
     font-size: 0.9em;
