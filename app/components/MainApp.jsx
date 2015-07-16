@@ -2,14 +2,11 @@
 
 import TimerBox from './TimerBox.jsx';
 import TodoBox from './TodoBox.jsx';
+import Store from '../stores/Store';
 
 function getStateFromStore(){
-  var _todoData = [
-    { todo: "加購票券樣式調整", done: false},
-    { todo: "輸入關鍵字，預設帶第一筆資料", done: false},
-    { todo: "static map", done: true}
-  ];
-  return _todoData;
+  var _todoData;
+  return _todoData = Store.getAll();
 }
 
 class MainApp extends React.Component {

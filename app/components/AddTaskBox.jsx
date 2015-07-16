@@ -22,7 +22,7 @@ class comp extends React.Component {
   }
   handleAddTask(){
     var newTask = this.$addInput.val();
-    actions.handleAddTask( newTask);
+    actions.handleAddTask(newTask);
   }
 }
 

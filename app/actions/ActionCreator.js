@@ -8,7 +8,7 @@ var ActionCreator ={
       actionType: "ADD_TASK",
       newTask: newTask
     };
-    Dispatcher.dispatch( action);
+    Dispatcher.dispatch(action);
   }
 };
 
