@@ -37,6 +37,8 @@
     cursor: pointer;
   }
   .task {
+    height: 16px;
+    display: block;
     outline: none;
     @include transition-property(opacity);
     @include transition-duration(0.2s);
