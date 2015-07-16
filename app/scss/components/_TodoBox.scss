@@ -24,8 +24,9 @@
   }
   .taskList {
     position: relative;
-    background: $orange;
+    height: 32px;
     margin-bottom: 8px;
+    background: $orange;
   }
   .taskWrapper {
     // border: 1px solid $blue-ultralight;

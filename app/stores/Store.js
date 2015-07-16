@@ -13,10 +13,15 @@ class Store extends events.EventEmitter {
   emitChange(){
     this.emit('change');
   }
+  addChangeListener(callback){
+    this.on( 'change', callback);
+  }
   getAll(){
     return _todoData;
   }
 };
+
+var store = new Store();
 
 Dispatcher.register(function(action){
   switch (action.actionType) {
@@ -25,9 +30,9 @@ Dispatcher.register(function(action){
         todo: action.newTask,
         done: false
       });
-      Store.emitChange(); //error
+      store.emitChange();
       break;
   }
 });
 
-export default new Store;
+export default store;

@@ -14,6 +14,12 @@ class MainApp extends React.Component {
     super();
     this.state = { data : getStateFromStore()};
   }
+  onChange(){
+    this.setState( getStateFromStore());
+  }
+  componentDidMount(){
+    Store.addChangeListener( this.onChange.bind(this));
+  }
   render() {
     return (
       <div className="appContainer">
