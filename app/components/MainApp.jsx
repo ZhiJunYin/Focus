@@ -12,10 +12,10 @@ function getStateFromStore(){
 class MainApp extends React.Component {
   constructor() {
     super();
-    this.state = { data : getStateFromStore()};
+    this.state = getStateFromStore();
   }
   onChange(){
-    this.setState({ data : getStateFromStore()});
+    this.setState(getStateFromStore());
   }
   componentDidMount(){
     Store.addChangeListener( this.onChange.bind(this));
@@ -24,7 +24,7 @@ class MainApp extends React.Component {
     return (
       <div className="appContainer">
         <TimerBox className="timerBox" />
-        <TodoBox className="todoBox" truth={this.state.data} />
+        <TodoBox className="todoBox" truth={this.state} />
         <div className="clear"></div>
       </div>
     )

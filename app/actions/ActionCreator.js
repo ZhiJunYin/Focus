@@ -27,6 +27,12 @@ var ActionCreator ={
       actionType: "REMOVE_TASK",
       task: task
     });
+  },
+  handleSearchTask(value){
+    Dispatcher.dispatch({
+      actionType: "SEARCH_TASK",
+      value: value
+    });
   }
 };
 

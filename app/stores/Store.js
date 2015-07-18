@@ -8,17 +8,20 @@ var _todoData = [
   { todo: "輸入關鍵字，預設帶第一筆資料", done: false},
   { todo: "static map", done: true}
 ];
+var filter = "";
 
 class Store extends events.EventEmitter {
   emitChange(){
     this.emit('change');
-    console.log(_todoData);
   }
   addChangeListener(callback){
     this.on( 'change', callback);
   }
   getAll(){
-    return _todoData;
+    return {
+      data: _todoData,
+      filter: filter
+    };
   }
 };
 
@@ -50,6 +53,12 @@ Dispatcher.register(function(action){
       action.comp.props.truth.done = !action.comp.props.truth.done;
       store.emitChange();
       break;
+
+    case "SEARCH_TASK":
+      if( filter !== action.value){
+        filter = action.value;
+        store.emitChange();
+      }
   }
 });
 

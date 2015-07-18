@@ -16,8 +16,7 @@ class comp extends React.Component {
     return(
       <li className="taskList">
         <label className="taskWrapper"
-          onClick = { this.switchTask.bind(this)}
-          onDoubleClick={ this.editTask.bind(this)}>
+          onClick = { this.switchTask.bind(this)}>
 
           <span className={ taskClasses}
                 onBlur={ this.endEditTask.bind(this)}
@@ -76,6 +75,9 @@ class comp extends React.Component {
     }
   }
   switchTask(){
+    if(this.$task.attr('contenteditable')){
+      return;
+    }
     actions.handleSwitchTask(this);
   }
 }
