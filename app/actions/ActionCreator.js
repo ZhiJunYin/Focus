@@ -4,33 +4,29 @@ import Dispatcher from '../dispatcher/Dispatcher';
 
 var ActionCreator ={
   handleAddTask(newTask){
-    var action = {
+    Dispatcher.dispatch({
       actionType: "ADD_TASK",
       newTask: newTask
-    };
-    Dispatcher.dispatch(action);
+    });
   },
   handleUpdateTask( comp, value){
-    var action = {
+    Dispatcher.dispatch({
       actionType: "UPDATE_TASK",
       comp: comp,
       value: value
-    }
-    Dispatcher.dispatch(action);
+    });
   },
   handleSwitchTask(comp){
-    var action = {
+    Dispatcher.dispatch({
       actionType:"SWITCH_TASK",
       comp: comp
-    }
-    Dispatcher.dispatch(action);
+    });
   },
   handleRemoveTask(task){
-    var action = {
+    Dispatcher.dispatch({
       actionType: "REMOVE_TASK",
       task: task
-    }
-    Dispatcher.dispatch(action);
+    });
   }
 };
 
