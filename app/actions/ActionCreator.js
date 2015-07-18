@@ -9,7 +9,16 @@ var ActionCreator ={
       newTask: newTask
     };
     Dispatcher.dispatch(action);
+  },
+  handleUpdateTask( comp, value){
+    var action = {
+      actionType: "UPDATE_TASK",
+      comp: comp,
+      value: value
+    }
+    Dispatcher.dispatch(action);
   }
+  hadleDeleteTask(){}
 };
 
 export default ActionCreator;

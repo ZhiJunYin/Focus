@@ -32,6 +32,10 @@ Dispatcher.register(function(action){
       });
       store.emitChange();
       break;
+
+    case "UPDATE_TASK":
+      action.comp.props.truth.todo = action.value;
+      store.emitChange();
   }
 });
 

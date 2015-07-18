@@ -1,5 +1,7 @@
 'use strict';
 
+import actions from '../actions/ActionCreator';
+
 class comp extends React.Component {
 
   componentDidMount(){
@@ -13,13 +15,16 @@ class comp extends React.Component {
     });
     return(
       <li className="taskList">
-        <label className="taskWrapper" onClick = { this.handleDoneOrNot.bind(this)}>
+        <label className="taskWrapper"
+          onClick = { this.handleDoneOrNot.bind(this)}
+          onDoubleClick={ this.handleEdit.bind(this)}>
+
           <span className={ taskClasses}
-                onDoubleClick={ this.handleEdit.bind(this)}
                 onBlur={ this.handleEndEdit.bind(this)}
                 onKeyDown={this.handleKeyDown.bind(this)}>
             { this.props.truth.todo}
           </span>
+
         </label>
         <div className="taskOptions">
           <i className="fa fa-pencil" onClick={ this.handleEdit.bind(this)}></i>
@@ -54,6 +59,7 @@ class comp extends React.Component {
         'cursor': 'pointer'
       });
     taskValue = this.$task.text();
+    actions.handleUpdateTask( this, taskValue);
   }
 
   handleKeyDown(e){
