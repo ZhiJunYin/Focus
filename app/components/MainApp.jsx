@@ -16,7 +16,6 @@ class MainApp extends React.Component {
   }
   onChange(){
     this.setState({ data : getStateFromStore()});
-    console.log( this.state);
   }
   componentDidMount(){
     Store.addChangeListener( this.onChange.bind(this));

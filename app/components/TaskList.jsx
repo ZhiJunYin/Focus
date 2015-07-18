@@ -16,25 +16,25 @@ class comp extends React.Component {
     return(
       <li className="taskList">
         <label className="taskWrapper"
-          onClick = { this.handleDoneOrNot.bind(this)}
-          onDoubleClick={ this.handleEdit.bind(this)}>
+          onClick = { this.switchTask.bind(this)}
+          onDoubleClick={ this.editTask.bind(this)}>
 
           <span className={ taskClasses}
-                onBlur={ this.handleEndEdit.bind(this)}
-                onKeyDown={this.handleKeyDown.bind(this)}>
+                onBlur={ this.endEditTask.bind(this)}
+                onKeyDown={this.pressEnter.bind(this)}>
             { this.props.truth.todo}
           </span>
 
         </label>
         <div className="taskOptions">
-          <i className="fa fa-pencil" onClick={ this.handleEdit.bind(this)}></i>
-          <i className="fa fa-trash-o"></i>
+          <i className="fa fa-pencil" onClick={ this.editTask.bind(this)}></i>
+          <i className="fa fa-trash-o" onClick={ this.removeTask.bind(this)}></i>
         </div>
       </li>
     );
   }
 
-  handleEdit(e){
+  editTask(e){
     this.$task
       .attr('contenteditable', 'true')
       .focus()
@@ -47,7 +47,7 @@ class comp extends React.Component {
       });
   }
 
-  handleEndEdit(){
+  endEditTask(){
     var taskValue;
     this.$task
       .removeAttr('contenteditable')
@@ -59,17 +59,24 @@ class comp extends React.Component {
         'cursor': 'pointer'
       });
     taskValue = this.$task.text();
+    if( taskValue == "" ){
+      this.removeTask();
+      return;
+    }
     actions.handleUpdateTask( this, taskValue);
   }
-
-  handleKeyDown(e){
+  removeTask(){
+    if( this.props.onRemove){
+      this.props.onRemove(this);
+    }
+  }
+  pressEnter(e){
     if( e.keyCode == 13){
       this.$task.blur();
     }
   }
-
-  handleDoneOrNot(){
-
+  switchTask(){
+    actions.handleSwitchTask(this);
   }
 }
 

@@ -17,8 +17,21 @@ var ActionCreator ={
       value: value
     }
     Dispatcher.dispatch(action);
+  },
+  handleSwitchTask(comp){
+    var action = {
+      actionType:"SWITCH_TASK",
+      comp: comp
+    }
+    Dispatcher.dispatch(action);
+  },
+  handleRemoveTask(task){
+    var action = {
+      actionType: "REMOVE_TASK",
+      task: task
+    }
+    Dispatcher.dispatch(action);
   }
-  hadleDeleteTask(){}
 };
 
 export default ActionCreator;

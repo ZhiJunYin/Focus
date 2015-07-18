@@ -12,6 +12,7 @@ var _todoData = [
 class Store extends events.EventEmitter {
   emitChange(){
     this.emit('change');
+    console.log(_todoData);
   }
   addChangeListener(callback){
     this.on( 'change', callback);
@@ -36,6 +37,19 @@ Dispatcher.register(function(action){
     case "UPDATE_TASK":
       action.comp.props.truth.todo = action.value;
       store.emitChange();
+      break;
+
+    case "REMOVE_TASK":
+      _todoData = _todoData.filter(function(data){
+        return data.todo != action.task;
+      });
+      store.emitChange();
+      break;
+
+    case "SWITCH_TASK":
+      action.comp.props.truth.done = !action.comp.props.truth.done;
+      store.emitChange();
+      break;
   }
 });
 
