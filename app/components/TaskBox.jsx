@@ -8,9 +8,9 @@ class comp extends React.Component {
     var taskData = this.props.truth.data;
     var keyword = this.props.truth.filter;
 
-    var arrTask = taskData.filter(function(data){
+    var arrTask = taskData.filter((data) => {
       return data.todo.indexOf(keyword) !== -1;
-    }).map(function(data, i){
+    }).map((data, i) => {
       return <TaskList truth={data} key={i} onRemove={this.removeTask} />
     }, this);
 

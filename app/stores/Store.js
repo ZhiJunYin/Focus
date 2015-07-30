@@ -27,7 +27,7 @@ class Store extends events.EventEmitter {
 
 var store = new Store();
 
-Dispatcher.register(function(action){
+Dispatcher.register( (action) => {
   switch (action.actionType) {
     case "ADD_TASK":
       _todoData.push({
