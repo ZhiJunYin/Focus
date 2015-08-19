@@ -1,4 +1,4 @@
 # Focus
 It's a todo app base on React, Flux and Webpack.
 
-use "npm run dev" to start.
+Using "npm run dev" to start.
